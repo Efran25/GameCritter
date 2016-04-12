@@ -10,6 +10,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * Created by mqureshi16 on 3/24/2016.
  */
+
+//Hi m Michael
 public class flowerCritter extends Critter {
     ActorWorld world;
     public flowerCritter(ActorWorld world) {
