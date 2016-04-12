@@ -7,11 +7,13 @@ import java.util.*;
 
 public class RedFlower extends Flower
 {
-    private int life = ((int) ((Math.random() * 10) + 5));
+    public int life = ((int) ((Math.random() * 10) + 5));
+
     public RedFlower()
     {
         setColor(Color.RED);
     }
+
     public void act()
     {
         if (life > 0)
@@ -25,6 +27,9 @@ public class RedFlower extends Flower
         }
     }
 
+    public int getFlowerLife() {
+        return life;
+    }
     private void darken(){
         double DARKENING_FACTOR = 0.10;
 

@@ -6,20 +6,33 @@ public class FlowerNode
 {
     private Location myLocation;
     private FlowerNode next;
+
     FlowerNode head;
     FlowerNode current;
     FlowerNode n;
+
+    public int life;
+
     //private Node previous; // used for double LinkedLists
     FlowerNode()
     {
         myLocation = new Location(0,0);
         next = null;
     }
+
     FlowerNode(Location loc)
     {
         myLocation = new Location(loc.getRow(), loc.getCol());
         next = null;
     }
+
+    FlowerNode(Location loc, int life)
+    {
+        myLocation = new Location(loc.getRow(), loc.getCol());
+        next = null;
+        this.life = life;
+    }
+
     FlowerNode(ArrayList<Location> a)
     {
         head = new FlowerNode(a.get(0));

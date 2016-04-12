@@ -6,6 +6,8 @@
  */
 import info.gridworld.grid.*;
 import info.gridworld.actor.*;
+import sun.util.resources.cldr.om.LocaleNames_om;
+
 import java.util.*;
 
 import java.awt.*;
@@ -14,7 +16,7 @@ public class RedNodeCritter  extends Critter{
     private Location home = new Location(0,0);
 
     public void act(){
-        LinkedList<FlowerNode> flowers = getFlowers();
+        LinkedList <FlowerNode> flowers = getFlowers();
         if (flowers.size() == 0){
             makeMove(home);
             //if(getLocation().getRow() == home.getRow() && getLocation().getCol() == home.getCol())
@@ -30,9 +32,14 @@ public class RedNodeCritter  extends Critter{
     {
         Grid gr = getGrid();
         LinkedList<FlowerNode> temp = new LinkedList<FlowerNode>();
-        for(Location a : (ArrayList<Location>) gr.getOccupiedLocations())
+
+        ArrayList<Location> locList = gr.getOccupiedLocations();
+
+        // sortList(locList);
+
+        for(Location a : locList)
         {
-            if(gr.get(a) instanceof Flower)
+            if(gr.get(a) instanceof RedFlower)
             {
                 temp.add(new FlowerNode(a));
             }
@@ -50,6 +57,29 @@ public class RedNodeCritter  extends Critter{
             moveTo(next);
 
     }
+
+ /*
+ QuickSort Implementation
+    public ArrayList<Location> sortList(ArrayList<Location> loc) {
+        System.out.print(loc);
+
+        quickSort(loc);
+
+    }
+
+
+
+    public ArrayList<Location> quickSort(ArrayList<Location> loc) {
+        if(loc == null || loc.size() == 0)
+            return loc;
+
+        int middle = (int) Math.ceil((double)loc.size()/2);
+        Location pivot = loc.get(middle);
+
+        List <Location> less = new ArrayList<Location>();
+
+    }
+    */
 /*
     public void makeFlowers() {
         ArrayList<Flower> flowerList = new ArrayList<>();

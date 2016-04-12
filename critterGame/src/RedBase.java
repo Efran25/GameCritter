@@ -8,6 +8,7 @@ import java.awt.*;
 /**
  * Created by Efran25 on 3/31/2016.
  */
+
 public class RedBase extends Rock {
     public ArrayList<Flower> flowerList = new ArrayList<Flower>();
     private ActorWorld world = new ActorWorld();
@@ -19,7 +20,6 @@ public class RedBase extends Rock {
         setColor(Color.red);
         world = gameWorld;
         world.add(new Location(0, 9), new RedNodeCritter());
-
     }
 
     public RedBase(ArrayList<Flower> fl, ActorWorld gameWorld) {
@@ -50,6 +50,7 @@ public class RedBase extends Rock {
         }
     }
     // Helper
+    //Checks if Grid has no more colored flowers and the critter is next to the base
     public boolean checkEmpty() {
         for (Location a : getGrid().getOccupiedLocations()) {
             if (getGrid().get(a) instanceof Flower)
@@ -62,6 +63,7 @@ public class RedBase extends Rock {
     return false;
     }
 
+    //makes flowers
     public void makeFlowers() {
         int max = ((int) ((Math.random() * 8) + 4));
         //System.out.println(max);
