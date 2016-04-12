@@ -1,12 +1,22 @@
 package com.efran.gridworld;
 import java.util.ArrayList;
 import java.util.Random;
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
 
 public class QuickSort {
-    private static ArrayList<Integer> inputArray = new ArrayList<Integer>();
+    //private static ArrayList<Integer> inputArray = new ArrayList<Integer>();
+    private static ArrayList<Location> inputArray = new ArrayList<Location>();
+    private ActorWorld world = new ActorWorld();
 
+/*
     public QuickSort(ArrayList<Integer> inputArray){
         QuickSort.inputArray = inputArray;
+    }
+*/
+    public QuickSort(ArrayList<Location> inputArray, ActorWorld world){
+        QuickSort.inputArray = inputArray;
+        this.world = world;
     }
 
     public void startQuickStart(int start,int end){
@@ -18,7 +28,7 @@ public class QuickSort {
         }
     }
 
-    public ArrayList<Integer> getSortedArray(){
+    public ArrayList<Location> getSortedArray(){
         return QuickSort.inputArray;
     }
 
@@ -31,11 +41,12 @@ public class QuickSort {
 
         Random r = new Random();
         int pivotIndex = nextIntInRange(start,end,r);
-        int pivot = inputArray.get(pivotIndex);
+        Location pivot = inputArray.get(pivotIndex);
 
         System.out.println("Pivot Element "+pivot+" at index:"+pivotIndex);
 
         while(true){
+            /*
             while(inputArray.get(length)>pivot && length>start){
                 length--;
             }
@@ -60,8 +71,13 @@ public class QuickSort {
                 System.out.println("\n---------Iteration Ends---------");
                 return length;
             }
+            */
         }
 
+    }
+
+    public int getDistance(Location current) {
+        return 0;
     }
 
     // Below method is to just find random integer from given range

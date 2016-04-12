@@ -99,6 +99,7 @@ public class flowerCritter extends Critter {
         if(getGrid().get(a) instanceof Rock){
             h+=20;
         }
+
         if(getGrid().get(a) != null){
             h++;
         }

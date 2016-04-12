@@ -59,16 +59,18 @@ public class RedNodeCritter  extends Critter{
 
     }
 
- /*
- QuickSort Implementation
+
+ //QuickSort Implementation
     public ArrayList<Location> sortList(ArrayList<Location> loc) {
         System.out.print(loc);
 
-        quickSort(loc);
+        QuickSort qsu = new QuickSort(loc);
+        qsu.startQuickStart(0, loc.size()-1);
+
 
     }
 
-
+/*
 
     public ArrayList<Location> quickSort(ArrayList<Location> loc) {
         if(loc == null || loc.size() == 0)
